@@ -1,0 +1,10 @@
+# Environment variables
+.env
+
+# Private project notes
+docs/*.md
+
+# Public documentation
+!docs/README.md
+
+/.vscode
