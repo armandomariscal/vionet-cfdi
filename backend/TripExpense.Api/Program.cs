@@ -14,13 +14,29 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
-using var scope = app.Services.CreateScope();
+var runMigrations =
+    builder.Configuration.GetValue<bool>("RUN_MIGRATIONS");
 
-var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+var runSeed =
+    builder.Configuration.GetValue<bool>("RUN_SEED");
 
-await context.Database.MigrateAsync();
+if (runMigrations || runSeed)
+{
+    using var scope = app.Services.CreateScope();
 
-await DbSeeder.SeedAsync(context);
+    var context =
+        scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    if (runMigrations)
+    {
+        await context.Database.MigrateAsync();
+    }
+
+    if (runSeed)
+    {
+        await DbSeeder.SeedAsync(context);
+    }
+}
 
 if (app.Environment.IsDevelopment())
 {
