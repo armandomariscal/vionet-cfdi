@@ -8,3 +8,14 @@ docs/*.md
 !docs/README.md
 
 /.vscode
+
+
+
+bin/
+obj/
+
+.vs/
+.vscode/
+
+*.user
+*.suo
