@@ -2,9 +2,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TripExpense.Application\TripExpense.Application.csproj" />
+    <ProjectReference Include="..\TripExpense.Domain\TripExpense.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="QuestPDF" Version="2026.2.4" />
   </ItemGroup>
 
