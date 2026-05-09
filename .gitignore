@@ -1,21 +1,24 @@
 # Environment variables
 .env
+.env.*
+
+# Local app settings
+appsettings.Development.json
+
+# Build artifacts
+bin/
+obj/
+
+# Visual Studio / VSCode
+.vs/
+.vscode/
+
+# User-specific IDE files
+*.user
+*.suo
 
 # Private project notes
 docs/*.md
 
 # Public documentation
 !docs/README.md
-
-/.vscode
-
-
-
-bin/
-obj/
-
-.vs/
-.vscode/
-
-*.user
-*.suo
